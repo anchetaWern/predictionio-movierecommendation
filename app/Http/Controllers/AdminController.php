@@ -16,7 +16,7 @@ class AdminController extends BaseController
     	
 		for($x = 1; $x <= 100; $x++){
 
-			$movies_url = 'https://api.themoviedb.org/3/movie/popular?api_key=YOUR TMDB API KEY&page=' . $x;
+			$movies_url = 'https://api.themoviedb.org/3/movie/popular?api_key=' . env('TMDB_KEY') . '&page=' . $x;
 	
 			$movies_response = $http_client->get($movies_url);
 			$movies_body = $movies_response->getBody();
@@ -35,7 +35,7 @@ class AdminController extends BaseController
 						$poster_path = $row['poster_path'];
 					}
 
-					$moviedetails_url = 'https://api.themoviedb.org/3/movie/' . $id . '?api_key=YOUR TMDB API KEY';
+					$moviedetails_url = 'https://api.themoviedb.org/3/movie/' . $id . '?api_key=' . env('TMDB_KEY');
 
 					$moviedetails_response = $http_client->get($moviedetails_url);
 					$movie_details_body = $moviedetails_response->getBody();

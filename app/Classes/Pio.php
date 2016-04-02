@@ -8,7 +8,7 @@ class Pio {
 
 	public function eventClient(){
 
-		$pio_accesskey = 'YOUR PIO APP ACCESS KEY';
+		$pio_accesskey = env('PIO_KEY');
 		$pio_eventserver = 'http://127.0.0.1:7070';
 
 		return new EventClient($pio_accesskey, $pio_eventserver);

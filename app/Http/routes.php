@@ -13,11 +13,11 @@
 
 
 
-$app->get('/', 'App\Http\Controllers\HomeController@index');
+$app->get('/', 'HomeController@index');
 
-$app->get('/movies/import', 'App\Http\Controllers\AdminController@importMovies');
+$app->get('/movies/import', 'AdminController@importMovies');
 
-$app->post('/movie/random', 'App\Http\Controllers\HomeController@randomMovie');
+$app->post('/movie/random', 'HomeController@randomMovie');
 
-$app->get('/movies/recommended', 'App\Http\Controllers\HomeController@recommendedMovies');
+$app->get('/movies/recommended', 'HomeController@recommendedMovies');
 
